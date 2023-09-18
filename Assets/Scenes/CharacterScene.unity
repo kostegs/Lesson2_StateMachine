@@ -2048,6 +2048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb698df740f25e4fb0559af513d6962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!1001 &1720906703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2173,9 +2174,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ground:
-    serializedVersion: 2
     m_Bits: 64
   _distanceToCheck: 0.1
+  <IsTouches>k__BackingField: 0
 --- !u!1001 &1760858418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2533,6 +2534,7 @@ MonoBehaviour:
   _config: {fileID: 11400000, guid: 57844b73731e81d418bd405eb629abd6, type: 2}
   _view: {fileID: 1507690136}
   _groundChecker: {fileID: 1755632458}
+  _controller: {fileID: 0}
 --- !u!143 &2134441075
 CharacterController:
   m_ObjectHideFlags: 0
