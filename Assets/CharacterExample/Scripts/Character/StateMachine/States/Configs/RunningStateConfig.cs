@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class RunningStateConfig : MonoBehaviour
+[Serializable]
+public class RunningStateConfig 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField, Range(0, 10)] private float _speed;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float Speed => _speed;
 }

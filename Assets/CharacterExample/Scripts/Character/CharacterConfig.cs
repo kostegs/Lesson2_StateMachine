@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterConfig : MonoBehaviour
+[CreateAssetMenu(fileName = "CharacterConfig", menuName = "Configs/CharacterConfig")]
+public class CharacterConfig : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private RunningStateConfig _runningStateConfig;
+    [SerializeField] private AirborneStateConfig _airborneStateConfig;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public RunningStateConfig RunningStateConfig => _runningStateConfig;
+    public AirborneStateConfig  AirborneStateConfig => _airborneStateConfig;
 }

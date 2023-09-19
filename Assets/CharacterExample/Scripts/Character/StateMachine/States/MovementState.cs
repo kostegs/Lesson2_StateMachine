@@ -7,6 +7,7 @@ public abstract class MovementState : IState
     
     protected PlayerInput Input => _character.Input;
     protected CharacterController Controller => _character.Controller;
+    protected CharacterView View => _character.View;
 
     private readonly Character _character;
     private Quaternion TurnRight => new Quaternion(0, 0, 0, 0);
@@ -19,9 +20,16 @@ public abstract class MovementState : IState
         _character = character;
     }
 
-    public virtual void Enter() => Debug.Log(GetType());
+    public virtual void Enter()
+    {
+        Debug.Log(GetType());
+        AddInputActionsCallback();
+    }
 
-    public virtual void Exit() {}
+    public virtual void Exit() 
+    {
+        RemoveInputActionsCallback();
+    }
 
     public void HandleInput()
     {
@@ -36,6 +44,10 @@ public abstract class MovementState : IState
         Controller.Move(velocity * Time.deltaTime);
         _character.transform.rotation = GetRotationFrom(velocity);
     }
+
+    protected virtual void AddInputActionsCallback() { }
+
+    protected virtual void RemoveInputActionsCallback() { }
 
     protected bool IsHorizontalInputZero() => Data.XInput == 0;
 
