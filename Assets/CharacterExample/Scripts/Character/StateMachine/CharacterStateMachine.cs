@@ -6,11 +6,14 @@ public class CharacterStateMachine : IStateSwitcher
     private List<IState> _states;
     private IState _currentState;
 
-    public CharacterStateMachine()
+    public CharacterStateMachine(Character character)
     {
+        StateMachineData data = new StateMachineData();
+
         _states = new List<IState>()
         {
-
+            new IdlingState(this, data, character),
+            new RunningState(this, data, character),  
         };
 
         _currentState = _states[0];

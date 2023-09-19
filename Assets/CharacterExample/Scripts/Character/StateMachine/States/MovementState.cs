@@ -37,6 +37,12 @@ public abstract class MovementState : IState
         _character.transform.rotation = GetRotationFrom(velocity);
     }
 
+    protected bool IsHorizontalInputZero() => Data.XInput == 0;
+
+    private float ReadHorizontalInput() => Input.Movement.Move.ReadValue<float>();
+
+    private Vector3 GetConvertedVelocity() => new Vector3(Data.XVelocity, Data.YVelocity, 0);
+
     private Quaternion GetRotationFrom(Vector3 velocity)
     {
         if (velocity.x > 0)
@@ -46,8 +52,4 @@ public abstract class MovementState : IState
 
         return _character.transform.rotation;   
     }
-
-    private Vector3 GetConvertedVelocity() => new Vector3(Data.XVelocity, Data.YVelocity, 0);
-
-    private float ReadHorizontalInput() => Input.Movement.Move.ReadValue<float>();
 }

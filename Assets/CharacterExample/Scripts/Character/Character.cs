@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     {
         _controller = GetComponent<CharacterController>();
         _input = new PlayerInput();
-        _stateMachine = new CharacterStateMachine();
+        _stateMachine = new CharacterStateMachine(this);
     }
 
     private void Update()
