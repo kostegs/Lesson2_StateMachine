@@ -8,4 +8,6 @@ public class CharacterConfig : ScriptableObject
 
     public RunningStateConfig RunningStateConfig => _runningStateConfig;
     public AirborneStateConfig  AirborneStateConfig => _airborneStateConfig;
+
+    private void OnValidate() => _runningStateConfig.Validate();
 }
