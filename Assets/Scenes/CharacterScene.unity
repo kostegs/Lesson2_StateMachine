@@ -2550,4 +2550,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: c78357480c193474389930c53003dac8, type: 2}
   _view: {fileID: 1507690135}
-  _groundChecker: {fileID: 0}
+  _groundChecker: {fileID: 776181318}
